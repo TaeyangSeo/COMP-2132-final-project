@@ -1,0 +1,141 @@
+html,
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: "Sora", sans-serif;
+}
+
+header,
+footer {
+  background-color: black;
+  padding: 0;
+  height: 50px;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+}
+
+img {
+  height: 95%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#container {
+  display: grid;
+  grid-template-rows: 5% 60% 35%;
+  grid-template-columns: 100%;
+  height: calc(100vh - 100px);
+  background-color: lightgray;
+  grid-template-areas: "top" "middle" "bottom";
+  overflow: hidden;
+}
+
+#popup {
+  opacity: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(64, 44, 52);
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 2px solid black;
+  z-index: 1000;
+  transition: opacity 1s;
+}
+
+#restart-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 40px;
+  border-radius: 2px;
+}
+
+#popup p {
+  color: white;
+}
+
+#popup h1 {
+  color: white;
+}
+
+#hangman-section {
+  grid-area: middle;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+#hangman-image {
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+#guessing-section {
+  display: grid;
+  grid-area: bottom;
+  grid-template-rows: 15% 15% 70%;
+  grid-template-columns: 100%;
+  grid-template-areas: "first" "second" "third";
+}
+
+#word-section {
+  grid-area: first;
+  text-align: center;
+  font-size: 25px;
+  overflow: hidden;
+}
+
+#hint-section {
+  grid-area: second;
+  text-align: center;
+  overflow: hidden;
+}
+
+#keyboard-section {
+  grid-area: third;
+  text-align: center;
+}
+
+#keyboard-section button {
+  background-color: #4caf50;
+  color: white;
+  font-size: 14px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 5px;
+}
+
+#keyboard-section button:hover {
+  background-color: #45a049;
+}
+
+p {
+  border-radius: 10px;
+  font-size: 18px;
+  transition: filter 0.3s ease;
+}
+
+p:hover {
+  filter: blur(1px);
+}
+
+@media screen and (max-width: 750px) {
+  #container {
+    grid-template-rows: 15% 55% 30%;
+  }
+}
+@media screen and (max-width: 585px) {
+  #container {
+    grid-template-rows: 15% 45% 40%;
+  }
+}
